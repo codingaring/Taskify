@@ -69,11 +69,15 @@ const InvitationHistory = () => {
   }, [pageNation.currentPage]);
 
   const InvitationList = invitations.map(invitation => (
-    <div className='flex justify-between border-solid border-b-[1px] py-4 last:border-none'>
+    <div key={invitation.id} className='flex justify-between border-solid border-b-[1px] py-4 last:border-none'>
       <div className='flex gap-3 items-center'>
         <p className='text-base text-tp-black_700 ml-7'>{invitation.invitee.email}</p>
       </div>
-      <button type='button' className='border border-solid border-tp-gray_700 rounded-lg py-2 px-6 mr-7'>
+      <button
+        onClick={}
+        id={invitation.id}
+        type='button'
+        className='border border-solid border-tp-gray_700 rounded-lg py-2 px-6 mr-7'>
         버튼대체
       </button>
     </div>

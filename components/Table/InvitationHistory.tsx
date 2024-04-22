@@ -3,6 +3,7 @@ import { MouseEvent, useEffect, useState } from 'react';
 import TableLayout from './TableLayout';
 import { getInvitations } from '@/utils/api/getInvitations';
 import PageNationButton from '../PageNation/PageNationButton';
+import { deleteInvitations } from '@/utils/api/deleteInvitations';
 
 const mockData = [
   {
@@ -64,6 +65,15 @@ const InvitationHistory = () => {
     }
   };
 
+  const handleDeleteInvitation = (event: MouseEvent<HTMLButtonElement>) => {
+    const invitationId = event.currentTarget.id;
+    try {
+      deleteInvitations({ dashboardId: apiQuery.dashboardId, invitationId: invitationId });
+    } catch (error: any) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     handleInvitations();
   }, [pageNation.currentPage]);
@@ -74,7 +84,7 @@ const InvitationHistory = () => {
         <p className='text-base text-tp-black_700 ml-7'>{invitation.invitee.email}</p>
       </div>
       <button
-        onClick={}
+        onClick={handleDeleteInvitation}
         id={invitation.id}
         type='button'
         className='border border-solid border-tp-gray_700 rounded-lg py-2 px-6 mr-7'>

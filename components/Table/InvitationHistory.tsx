@@ -1,3 +1,5 @@
+'use client';
+import { useState } from 'react';
 import TableLayout from './TableLayout';
 
 const mockData = [
@@ -14,6 +16,7 @@ const mockData = [
 // api에서 데이터를 받아와서 띄워줘야 함
 
 const InvitationHistory = () => {
+  const [invitations, setInvitations] = useState([]);
   const InvitationList = mockData.map(invitation => (
     <div className='flex justify-between border-solid border-b-[1px] py-4 last:border-none'>
       <div className='flex gap-3 items-center'>

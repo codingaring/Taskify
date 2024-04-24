@@ -3,11 +3,13 @@ import ModalButton from './Button/ModalButton';
 import ModalLayout from './ModalLayout';
 import { I_ModalToggle } from './ModalType';
 import { postInvitation } from '@/utils/api/postInvitation';
+import { FormEvent } from 'react';
 
 const InviteModal = ({ handleModal }: I_ModalToggle) => {
   const { inputValue, onChange } = useInputValue();
 
-  const handlePostInvitation = async () => {
+  const handlePostInvitation = async (event: FormEvent<HTMLElement>) => {
+    event.preventDefault();
     try {
       const result = await postInvitation({ email: inputValue, dashboardId: 5946 });
       console.log(`result : `, result);
@@ -18,7 +20,7 @@ const InviteModal = ({ handleModal }: I_ModalToggle) => {
 
   return (
     <ModalLayout handleModal={handleModal} title='초대하기'>
-      <form className='flex flex-col gap-1.5 '>
+      <form onSubmit={handlePostInvitation} className='flex flex-col gap-1.5 '>
         <label className='mb-2.5'>이메일</label>
         <input
           onChange={onChange}

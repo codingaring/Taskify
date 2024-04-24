@@ -13,7 +13,7 @@ const MemberTable = () => {
   const { pageNation, setPageNation, handleCurrentPage } = usePageNation();
   const [members, setMembers] = useState(null);
   const apiQuery = {
-    showCount: 4,
+    showCount: 5,
     dashboardId: 5946,
   };
 

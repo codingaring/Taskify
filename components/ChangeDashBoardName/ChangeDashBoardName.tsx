@@ -62,7 +62,7 @@ const ChangeDashBoardName = () => {
     <form
       onSubmit={handleChangeDashBoard}
       role='table-Container'
-      className='flex flex-col rounded-md bg-tp-white px-7 pt-8 pb-7 shadow-sm gap-8 pc:w-[38.75rem] tb:w-[34rem] mb:w-[17.75rem]'>
+      className='flex flex-col rounded-md bg-tp-white px-7 pt-8 pb-7 shadow-sm gap-8 w-[17.75rem] pc:w-[38.75rem] tb:w-[34rem] '>
       <div role='header' className='flex justify-between'>
         <h1 className='text-[1.25rem] font-bold text-tp-black_700 '>{oldDashBoardName}</h1>
         <div className='flex items-center gap-2.5 '>

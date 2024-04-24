@@ -48,7 +48,8 @@ const ChangeDashBoardName = () => {
       color: selectColor,
     });
     try {
-      const result = changeDashBoard({ dashBoardId: 5946, changeData: changeDashBoardData });
+      changeDashBoard({ dashBoardId: 5946, changeData: changeDashBoardData });
+      alert('저장되었습니다.');
     } catch (error: any) {
       console.error(error);
     }

@@ -1,7 +1,5 @@
 'use client';
 
-import { ArrowForwardIcon } from 'constant/importImage';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import ChangeDashBoardName from '@/components/ChangeDashBoardName/ChangeDashBoardName';

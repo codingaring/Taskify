@@ -11,6 +11,7 @@ import Toast from '@/components/common/Toast/Toast';
 import { useDashboardId } from '@/hooks/useDashboardId';
 import { useHandleToast } from '@/hooks/usehandleToast';
 import { deleteDashBoard } from '@/utils/api/deleteDashBoard';
+import GobackButton from '@/components/dashboard/GoBackButton/GobackButton';
 
 const MydashBoard = () => {
   const { dashboardId } = useDashboardId();
@@ -42,12 +43,7 @@ const MydashBoard = () => {
       )}
       <div className='ml-4 mt-5 pb-7'>
         <Link href={`/dashboard/${dashboardId}`}>
-          <button type='button' className='text-base text-tp-black_700 flex gap-1.5 items-center mb-6'>
-            <div className='w-5 h-5 relative'>
-              <Image fill src={ArrowForwardIcon} alt='뒤로 가기 버튼' />
-            </div>
-            돌아가기
-          </button>
+          <GobackButton />
         </Link>
         <div className='flex flex-col gap-3'>
           <ChangeDashBoardName dashboardId={dashboardId} />
